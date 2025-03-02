@@ -1,0 +1,122 @@
+/* Общие настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Размытое фоновое изображение */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('йоу.png') no-repeat center center/cover;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+/* Контейнер с контентом */
+.content-container {
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    overflow-y: auto;
+    height: auto; /* Высота теперь зависит от содержимого */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Темная наложенная панель */
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ширина равна ширине контейнера */
+    height: 100%; /* Высота равна высоте контейнера */
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачная темная панель */
+    border-radius: 10px; /* Соответствует BorderRadius контейнера */
+    z-index: -1; /* Панель должна быть ниже текста */
+}
+
+/* Заголовок */
+.content-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Текст */
+.content-container p {
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Секция с картинками */
+.screenshots {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Заголовок секции */
+.screenshots h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+/* Грид для картинок */
+.screenshot-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Элемент с картинкой */
+.screenshot-item {
+    max-width: 250px;
+    text-align: center;
+}
+
+/* Стиль для картинок */
+.screenshot-item img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Подпись к картинке */
+.screenshot-item p {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #fff;
+}
